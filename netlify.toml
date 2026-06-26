@@ -1,0 +1,16 @@
+[build]
+  # Repository root is the base
+  base = "."
+  # Build the Next.js web app (and workspace dependencies) for production
+  command = "pnpm turbo run build --filter=@openclaw-crm/web"
+  # Next.js default build output directory
+  publish = "apps/web/.next"
+
+[build.environment]
+  # Pin Node.js version (match Dockerfile / local dev)
+  NODE_VERSION = "22"
+  # Tell Netlify which package manager to use
+  PACKAGE_MANAGER = "pnpm"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
