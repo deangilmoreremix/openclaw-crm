@@ -637,7 +637,7 @@ export async function callOpenRouter(
     headers: {
       Authorization: `Bearer ${config.apiKey}`,
       "Content-Type": "application/json",
-      "HTTP-Referer": process.env.BETTER_AUTH_URL || "http://localhost:3001",
+      "HTTP-Referer": process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3001",
     },
     body: JSON.stringify({
       model: config.model,
